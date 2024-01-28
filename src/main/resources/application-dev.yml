@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mariadb://192.168.1.250:3306/flight_db
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: rita
+    password: allus_soft
+    hikari:
+      idle-timeout: 10000
+      pool-name: api-pool
+      maximum-pool-size: 5
+
+logging:
+  level:
+    root: info
+    org.springframework: info
