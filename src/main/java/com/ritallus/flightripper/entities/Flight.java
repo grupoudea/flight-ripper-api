@@ -29,4 +29,5 @@ public class Flight {
 
     @Column(name = "date_time_arrival")
     private LocalDateTime dateTimeArrival;
+
 }

@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "839eb3a0-85b0-412e-a792-02502fc6e912",
+		"name": "fabricaEscuelaEndpoins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17813702",
+		"_collection_link": "https://galactic-space-737807.postman.co/workspace/New-Team-Workspace~3aeb5912-7a2d-480f-801b-7b5c6860a9f6/collection/17813702-839eb3a0-85b0-412e-a792-02502fc6e912?action=share&source=collection_link&creator=17813702"
+	},
+	"item": [
+		{
+			"name": "bookings",
+			"item": [
+				{
+					"name": "get-all-bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/booking/get-all-bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"booking",
+								"get-all-bookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "passenger",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": \"991234\",\r\n    \"fullName\": \"OMAR ALBERTO TORRES\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/passenger/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"passenger",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"document\": \"991234\",\r\n    \"fullName\": \"OMAR ALBERTO TORRES EDITADO!!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/passenger/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"passenger",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/passenger/get-by-id/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"passenger",
+								"get-by-id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter-by-name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/passenger/filter-by-name/da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"passenger",
+								"filter-by-name",
+								"da"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

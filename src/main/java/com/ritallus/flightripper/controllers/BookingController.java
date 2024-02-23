@@ -4,6 +4,7 @@ import com.ritallus.flightripper.entities.Booking;
 import com.ritallus.flightripper.services.BookingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class BookingController {
     }
 
     @GetMapping("/get-all-bookings")
-    public ResponseEntity<List<Booking>> getAllBookings(){
+    public ResponseEntity<List<Booking>> getAllBookings() {
 
         var bookings = bookingService.getAllBookings();
 

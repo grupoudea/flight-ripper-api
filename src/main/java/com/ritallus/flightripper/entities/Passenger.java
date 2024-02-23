@@ -3,12 +3,12 @@ package com.ritallus.flightripper.entities;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
+import java.io.Serializable;
 
 @Table(name = "passenger")
 @Entity
 @Data
-public class Passenger {
+public class Passenger implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
