@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +18,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/passenger")
 public class PassengerController {
+
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
 
     private PassengerService passengerService;
 
@@ -35,8 +41,15 @@ public class PassengerController {
 
         var passengerCreated = passengerService.save(passenger);
 
+        messagingTemplate.convertAndSend("/topic/passengers", passengerCreated);
+
         return ResponseEntity.ok(passengerCreated);
 
+    }
+
+    @SendTo("/topic/passengers")
+    public Passenger broadcastMessage(@Payload Passenger passenger) {
+        return passenger;
     }
 
     @GetMapping("/get-by-id/{idPassenger}")
@@ -45,6 +58,15 @@ public class PassengerController {
         var passengerCreated = passengerService.getById(idPassenger);
 
         return ResponseEntity.ok(passengerCreated);
+
+    }
+
+    @GetMapping("/get-all-passengers")
+    public ResponseEntity<List<Passenger>> getAllPassengers() {
+
+        var bookings = passengerService.getAllPassengers();
+
+        return ResponseEntity.ok(bookings);
 
     }
 

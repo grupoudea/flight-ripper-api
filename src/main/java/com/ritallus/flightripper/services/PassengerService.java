@@ -1,5 +1,6 @@
 package com.ritallus.flightripper.services;
 
+import com.ritallus.flightripper.entities.Booking;
 import com.ritallus.flightripper.entities.Passenger;
 import com.ritallus.flightripper.repositories.PassengerRepository;
 import org.springframework.stereotype.Service;
@@ -35,9 +36,14 @@ public class PassengerService {
         return passengerRepository.findById(idPassenger).orElseThrow(()-> new RuntimeException("Data not found"));
     }
 
+    public List<Passenger> getAllPassengers(){
+        var passengers = passengerRepository.findAll();
+        return passengers;
+    }
+
     public Passenger update(Passenger passenger) {
         if (Objects.isNull(passenger.getId())){
-            throw new RuntimeException("No puede ser nulo el id");
+            throw new RuntimeException("No puede ser nulo el id"); //ESTO LO PUEDEN PERSONALIZAR control advice
         }
 
         var passangerFound = getById(passenger.getId());
