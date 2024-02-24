@@ -37,7 +37,7 @@ public class PassengerService {
 
     public Passenger update(Passenger passenger) {
         if (Objects.isNull(passenger.getId())){
-            throw new RuntimeException("No puede ser nulo el id");
+            throw new RuntimeException("No puede ser nulo el id"); //ESTO LO PUEDEN PERSONALIZAR control advice
         }
 
         var passangerFound = getById(passenger.getId());
