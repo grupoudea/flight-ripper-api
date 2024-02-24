@@ -39,11 +39,21 @@
 				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"document\": \"991234\",\r\n    \"fullName\": \"OMAR ALBERTO TORRES\"\r\n}",
+							"raw": "{\r\n    \"document\": \"881234\",\r\n    \"fullName\": \"JUAN\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 6,\r\n    \"document\": \"991234\",\r\n    \"fullName\": \"OMAR ALBERTO TORRES EDITADO!!!!\"\r\n}",
+							"raw": "{\r\n    \"document\": \"981234\",\r\n    \"fullName\": \"DUA LIPA\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -113,6 +123,27 @@
 								"passenger",
 								"get-by-id",
 								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-passengers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/passenger/get-all-passengers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"passenger",
+								"get-all-passengers"
 							]
 						}
 					},
